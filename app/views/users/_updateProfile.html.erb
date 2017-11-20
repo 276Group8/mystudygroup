@@ -14,25 +14,34 @@
   <% end %>
 
   <div class="field">
-    <%= label_tag :first_name, "first_name" %><br>
+    <%= label_tag :first_name, "First Name" %><br>
     <%= text_field_tag :first_name, @user.first_name, required: true %>
     <br><br>
   </div>
   <div class="field">
-    <%= label_tag :last_name, "last_name" %><br>
+    <%= label_tag :last_name, "Last Name" %><br>
     <%= text_field_tag :last_name, @user.last_name, required: true %>
     <br><br>
   </div>
   <div class="field">
-    <%= label_tag :email, "email" %><br>
+    <%= label_tag :email, "Email" %><br>
     <%= text_field_tag :email, @user.email, required: true %>
     <br><br>
   </div>
   <div class="field">
-    <%= label_tag :bio, "bio" %><br>
+    <%= label_tag :bio, "Bio" %><br>
     <%= text_field_tag :bio, @user.bio, required: false %>
   <br><br>
   </div>
+  <div class="field">
+    <%= label_tag :school, "School" %><br>
+    <%= text_field_tag :school, @user.school, required: false %>
+  <br><br>
+  </div>  <div class="field">
+      <%= label_tag :faculty, "Faculty of Study" %><br>
+      <%= text_field_tag :faculty, @user.faculty, required: false %>
+    <br><br>
+    </div>
 
   <%= submit_tag "submit", class: 'btn btn-success' %>
 <% end %>

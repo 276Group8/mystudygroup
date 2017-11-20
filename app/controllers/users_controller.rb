@@ -38,6 +38,9 @@ class UsersController < ApplicationController
       @user.last_name = params[:last_name]
       @user.email = params[:email]
       @user.bio = params[:bio]
+      @user.school = params[:school]
+      @user.faculty = params[:faculty]
+
       if @user.save
           flash[:success] = "Profile updated!"
       else
