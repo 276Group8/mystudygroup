@@ -33,8 +33,6 @@ class UsersController < ApplicationController
 
   def changeProfile
       @user_id = params[:id]
-      # print ("akdbashdasjd")
-      # print @user_id
       @user = User.find(@user_id)
       @user.first_name = params[:first_name]
       @user.last_name = params[:last_name]
@@ -42,6 +40,8 @@ class UsersController < ApplicationController
       @user.bio = params[:bio]
       if @user.save
           flash[:success] = "Profile updated!"
+      else
+          flash[:error] = "Error"
       end
       redirect_to action: "show", user_id: @user_id
   end

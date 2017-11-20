@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   resources :users do
       member do
           post 'changeProfile'
-          # get 'updateProfile'
       end
   end
   get 'usrs/:id/edit', to: 'users#edit', as: 'update_user'
