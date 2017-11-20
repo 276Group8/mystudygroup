@@ -40,10 +40,10 @@ class UsersController < ApplicationController
       @user.last_name = params[:last_name]
       @user.email = params[:email]
       @user.bio = params[:bio]
-      @user.save
-
+      if @user.save
+          flash[:success] = "Profile updated!"
+      end
       redirect_to action: "show", user_id: @user_id
-
   end
 
   # DELETE /admin/users/1
