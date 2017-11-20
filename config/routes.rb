@@ -11,7 +11,14 @@ Rails.application.routes.draw do
   get '/', to: 'home#index', as: 'root_url'
 
   # User Routes
-  resources :users
+  resources :users do
+      member do
+          post 'changeProfile'
+          # get 'updateProfile'
+      end
+  end
+  get 'usrs/:id/edit', to: 'users#edit', as: 'update_user'
+  patch 'users/:id', to: 'users#update'
   get 'register' => 'users#new', :as => 'register'
 
   # Session routes

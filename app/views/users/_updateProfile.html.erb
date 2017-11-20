@@ -1,4 +1,6 @@
-<%= form_for(@user) do |f| %>
+<%= form_tag(changeProfile_user_path, method: "post") do %>
+<%= hidden_field_tag :user_id, @user_id %>
+
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,22 +13,27 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_area :first_name, required: true %>
+    <%= label_tag :first_name, "first_name" %><br>
+    <%= text_field_tag :first_name, @user.first_name, required: true %>
+    <br><br>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_area :last_name, required: true %>
+    <%= label_tag :last_name, "last_name" %><br>
+    <%= text_field_tag :last_name, @user.last_name, required: true %>
+    <br><br>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_area :email, required: true %>
+    <%= label_tag :email, "email" %><br>
+    <%= text_field_tag :email, @user.email, required: true %>
+    <br><br>
   </div>
   <div class="field">
-    <%= f.label :bio %><br>
-    <%= f.text_area :bio, required: false %>
+    <%= label_tag :bio, "bio" %><br>
+    <%= text_field_tag :bio, @user.bio, required: false %>
+  <br><br>
   </div>
 
-  <%= f.submit :Submit, class: 'btn btn-success' %>
+  <%= submit_tag "submit", class: 'btn btn-success' %>
 <% end %>

@@ -19,6 +19,11 @@
     <%= @user.email %>
   </p>
 
+  <p>
+    <strong>Bio:</strong>
+    <%= @user.bio %>
+  </p>
+
   <%= link_to 'Edit', '/admin/users/' + @user.id.to_s + '/edit' %> |
   <%= link_to 'Back', '/admin/users' %>
 </div>
